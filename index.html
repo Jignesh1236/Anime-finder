@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeFinder - Discover Your Next Favorite Anime</title>
+    <meta name="description" content="Explore thousands of anime with advanced filters. Search by genre, year, rating, and more.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>AnimeFinder</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search anime..." class="search-input">
+                    <button id="searchBtn" class="search-btn">Search</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <div class="filters-section">
+                    <h2>Filters</h2>
+                    <div class="filters-grid">
+                        <div class="filter-group">
+                            <label>Genre</label>
+                            <select id="genreFilter" class="filter-select">
+                                <option value="">All Genres</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Type</label>
+                            <select id="typeFilter" class="filter-select">
+                                <option value="">All Types</option>
+                                <option value="tv">TV</option>
+                                <option value="movie">Movie</option>
+                                <option value="ova">OVA</option>
+                                <option value="ona">ONA</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Status</label>
+                            <select id="statusFilter" class="filter-select">
+                                <option value="">All Status</option>
+                                <option value="airing">Airing</option>
+                                <option value="complete">Completed</option>
+                                <option value="upcoming">Upcoming</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Rating</label>
+                            <select id="ratingFilter" class="filter-select">
+                                <option value="">All Ratings</option>
+                                <option value="G">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                                <option value="R+">R+</option>
+                                <option value="Rx">Rx</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Min Score</label>
+                            <input type="number" id="minScore" class="filter-input" min="0" max="10" placeholder="0">
+                        </div>
+                        <div class="filter-group">
+                            <label>Max Score</label>
+                            <input type="number" id="maxScore" class="filter-input" min="0" max="10" placeholder="10">
+                        </div>
+                        <div class="filter-group">
+                            <label>Language</label>
+                            <select id="languageFilter" class="filter-select">
+                                <option value="">All Languages</option>
+                                <option value="japanese">Japanese</option>
+                                <option value="english">English</option>
+                                <option value="hindi">Hindi Dub</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>18+ Content</label>
+                            <select id="adultFilter" class="filter-select">
+                                <option value="off">Hide 18+</option>
+                                <option value="include">Include 18+</option>
+                                <option value="only">Only 18+</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select id="sortFilter" class="filter-select">
+                                <option value="popularity">Popularity</option>
+                                <option value="score">Rating</option>
+                                <option value="title">Title</option>
+                                <option value="start_date">Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="applyFilters" class="btn-primary">Apply Filters</button>
+                </div>
+
+                <div class="results-section">
+                    <div id="loading" class="loading" style="display: none;">
+                        <p>Loading anime...</p>
+                    </div>
+                    <div id="animeGrid" class="anime-grid"></div>
+                    <div id="error" class="error" style="display: none;"></div>
+                    
+                    <div class="pagination">
+                        <button id="prevBtn" class="btn-secondary">Previous</button>
+                        <span id="pageInfo" class="page-info">Page 1</span>
+                        <button id="nextBtn" class="btn-secondary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
